@@ -1,0 +1,15 @@
+ def initialize (height, width)
+    
+    @height=height
+    @width=width
+    @height||=640
+    @width||=480
+    super @height, @width,  
+    self.caption='Window'
+   
+  end
+
+
+  game window snippet
+  
+  ~

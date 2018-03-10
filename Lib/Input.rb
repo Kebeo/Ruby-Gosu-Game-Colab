@@ -1,17 +1,6 @@
 class Input
-    attr_reader :gamewindow
-    
-    def initialize gamewindow = GameWindow.new
-      @gamewindow = gamewindow
-    end
-  
+    attr_accessor :target
     def button_down id
-      close
+        target.receive_input id
     end
-  
-    private
-  
-    def close
-      gamewindow.close
-    end
-  end
+end

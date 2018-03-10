@@ -1,18 +1,17 @@
 require 'gosu'
-  
-class GameWindow < Gosu::Window
-   def initialize width  = 1400, height = 600
-    super width, height
-    self.caption = "Working Window"
-    @background_image = Gosu::Image.new("../Img/gamebackground.jpg", :tileable => true) 
-  end
 
-  def draw
-    @background_image.draw(0,0,0)
-  end
-  
-  def button_down id
-    Input.new.button_down id
-  end
+class GameWindow < Gosu::Window
+    def initialize
+        super 800, 600, false 
+        self.caption = "mario mock"
+        @background_image = Gosu::Image.new("/Users/kebeo/Desktop/Images/BackDropz/Moto-BackUp-Fantasy-Energy-Water-Bike-2014-Azure-Neon-HD-Wallpapers-design-by-Tony-Kokhan-www.el-tony.com_.jpg", :tileable => true)
+    end
+
+    def draw
+        @background_image.draw(0,0,0)
+    end
+
+    def button_down id
+        Game.input.button_down id
+    end
 end
-GameWindow.new.show
